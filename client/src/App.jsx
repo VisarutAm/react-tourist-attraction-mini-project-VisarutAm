@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+// import image_copy_link from "./image/copy-link-svgrepo-com.png"
 
 function App() {
   const [trip, setTrip] = useState([]);
@@ -16,7 +17,7 @@ function App() {
 
   useEffect(() => {
     getTrips();
-  });
+  },[findTrip]);
 
   const handleTagClick = (tag) => {
     const newFindTrip = findTrip ? `${findTrip} ${tag}` : tag;
@@ -25,7 +26,7 @@ function App() {
 
   const handleCopyUrl = (url) => {
     navigator.clipboard.writeText(url);
-    alert("Copy Link !!");
+    alert(`Copy Link !! : ${url}`);
   };
 
   const Ttips = () => {
@@ -41,10 +42,10 @@ function App() {
                 : `${data.description.substring(0, 100)}...`}
             </p>
             <a href={data.url}>อ่านต่อ</a>
-            <p>
+            <p className="tag-wrapper">
               หมวด :{" "}
               {data.tags.map((tag, tagIndex) => (
-                <button key={tagIndex} onClick={() => handleTagClick(tag)}>
+                <button className="tag-button" key={tagIndex} onClick={() => handleTagClick(tag)}>
                   {tag}
                 </button>
               ))}
@@ -56,8 +57,9 @@ function App() {
               className="copy-button"
               onClick={() => handleCopyUrl(data.url)}
             >
-              🔗
+              🔗<span>copy link</span>
             </button>
+            {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>
       ));
@@ -73,10 +75,10 @@ function App() {
                 : `${data.description.substring(0, 100)}...`}
             </p>
             <a href={data.url}>อ่านต่อ</a>
-            <p>
+            <p className="tag-wrapper">
               หมวด :{" "}
               {data.tags.map((tag, tagIndex) => (
-                <button key={tagIndex} onClick={() => handleTagClick(tag)}>
+                <button className="tag-button" key={tagIndex} onClick={() => handleTagClick(tag)}>
                   {tag}
                 </button>
               ))}
@@ -88,8 +90,9 @@ function App() {
               className="copy-button"
               onClick={() => handleCopyUrl(data.url)}
             >
-              🔗
+              🔗 <span>copy link</span>
             </button>
+            {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>
       ));

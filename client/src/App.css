@@ -52,7 +52,7 @@ hr {
 
 .main-image {
   width: 350px;
-  height: 270px;
+  height: 285px;
   border-radius: 30px;
   margin: 30px;
 }
@@ -74,27 +74,46 @@ hr {
   p {
     font-size: 16px;
     color: gray;
+    width: 620px;
+    height: 48px;
+
+  }
+  .tag-wrapper {
+    margin-bottom: 15px ;
   }
 }
 
 button {
   margin: 5px;
-  background-color: white;
+  background-color: rgb(18, 140, 211);
   font-size: 16px;
   border: none;
+ 
+
 }
 
 button:hover {
   cursor: pointer;
 }
 
+.tag-button {
+  border-radius: 15px;
+  padding: 0 5px;
+  text-decoration: underline;
+}
+
 .copy-button {
-  width: 50px;
+  width: 100px;
   height: 50px;
   position: absolute;
   right: 70px;
   top: 230px;
-  background-color: skyblue;
-  font-size: 30px;
-  border-radius: 50%;
+  background-color: rgb(135, 187, 235);
+  font-size: 20px;
+  border-radius: 10px;  
+  span { 
+    color: white;
+    font-size: 15px;
+
+  }
 }

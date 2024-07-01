@@ -1,5 +1,5 @@
-import "./App.css";
-import "./Responsive.css";
+import "./CSS/App.css";
+import "./CSS/Responsive.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ModalImage from "react-modal-image";

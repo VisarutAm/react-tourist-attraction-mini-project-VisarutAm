@@ -85,8 +85,8 @@ function App() {
             {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
             <img className="secondary-image" src={data.photos[3]} />*/}
-            <div className="wrap-secondary-image">
-            <div className="">
+            <div className="container-secondary-image">
+            <div className="wrapper-secondary-image">
             <ModalImage
             small={data.photos[1]}
             large={data.photos[1]}
@@ -168,7 +168,8 @@ function App() {
             {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
             <img className="secondary-image" src={data.photos[3]} />*/}
-            <div className="wrap-secondary-image">
+          <div className="container-secondary-image">
+           <div className="wrapper-secondary-image">
             <ModalImage
             small={data.photos[1]}
             large={data.photos[1]}
@@ -192,7 +193,7 @@ function App() {
               onClick={() => handleCopyUrl(data.url)}
             >
               🔗 <span>copy link</span>
-            </button>
+            </button></div>
             {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>

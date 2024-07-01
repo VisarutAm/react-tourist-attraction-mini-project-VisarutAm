@@ -1,15 +1,49 @@
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:992px) {
     .detail-card {
         display: flex;
         flex-direction: column ;
         align-items: center;
-    }
-    .wrap-secondary-image {
+    }   
+    .container-secondary-image {
         justify-content: center;
+        height: 180px;
     }
-    .copy-button { 
-        position: absolute;              
-        right: 250px;
-        top: 230px;
+    .copy-button {                  
+        right: 245px;
+        top: 107px;
      }
+}
+@media only screen and (max-width:650px) {
+    .description-tourist-attraction {
+        width: 450px;
+        p {
+          width: 450px;
+        }
+    }
+    .copy-button {                  
+        right: 160px;
+    }
+}
+ @media only screen and (max-width:480px) {
+    .main-image {
+        width: 320px;
+    }
+    .description-tourist-attraction {
+        margin-top: 10px;
+        width: 330px;
+        p {
+          width: 330px;
+          height: 68px;
+        }
+    }
+    .container-secondary-image {
+        justify-content: flex-start;  
+    }
+    .secondary-image {
+        margin: 15px 15px 15px 4px;              
+    }
+    .copy-button {
+        right: 100px;
+    }
+
 }

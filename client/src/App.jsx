@@ -1,6 +1,8 @@
 import "./App.css";
+import "./Responsive.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ModalImage from "react-modal-image";
 // import image_copy_link from "./image/copy-link-svgrepo-com.png"
 
 function App() {
@@ -33,7 +35,13 @@ function App() {
     if (findTrip) {
       return trip.map((data, index) => (
         <div className="detail-card" key={index}>
-          <img className="main-image" src={data.photos[0]} />
+          <ModalImage
+            small={data.photos[0]}
+            large={data.photos[0]}
+            alt="Secondary 1"
+            className="main-image"
+          />
+          {/* <img className="main-image" src={data.photos[0]} /> */}
           <div className="description-tourist-attraction">
             <h3>{data.title}</h3>
             <p>
@@ -42,23 +50,67 @@ function App() {
                 : `${data.description.substring(0, 100)}...`}
             </p>
             <a href={data.url}>อ่านต่อ</a>
-            <p className="tag-wrapper">
+            {/* <p className="tag-wrapper">
               หมวด :{" "}
               {data.tags.map((tag, tagIndex) => (
                 <button className="tag-button" key={tagIndex} onClick={() => handleTagClick(tag)}>
                   {tag}
                 </button>
               ))}
-            </p>
-            <img className="secondary-image" src={data.photos[1]} />
+            </p> */}
+            <p className="tag-wrapper">
+  หมวด :{" "}
+  {data.tags.map((tag, tagIndex) => {
+    if (tagIndex === data.tags.length - 1) {
+      return (
+        <span key={tagIndex}>
+          {"และ"}
+          <button className="tag-button" onClick={() => handleTagClick(tag)}>
+            {tag}
+          </button>
+        </span>
+      );
+    } else {
+      return (
+        <span key={tagIndex}>
+          <button className="tag-button" onClick={() => handleTagClick(tag)}>
+            {tag}
+          </button>{" "}
+        </span>
+      );
+    }
+  })}
+</p>
+
+            {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
-            <img className="secondary-image" src={data.photos[3]} />
+            <img className="secondary-image" src={data.photos[3]} />*/}
+            <div className="wrap-secondary-image">
+            <div className="">
+            <ModalImage
+            small={data.photos[1]}
+            large={data.photos[1]}
+            alt="Secondary 1"
+            className="secondary-image"
+          />
+          <ModalImage
+            small={data.photos[2]}
+            large={data.photos[2]}
+            alt="Secondary 2"
+            className="secondary-image"
+          />
+          <ModalImage
+            small={data.photos[3]}
+            large={data.photos[3]}
+            alt="Secondary 3"
+            className="secondary-image"
+          /></div>
             <button
               className="copy-button"
               onClick={() => handleCopyUrl(data.url)}
             >
               🔗<span>copy link</span>
-            </button>
+            </button></div>
             {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>
@@ -66,7 +118,13 @@ function App() {
     } else {
       return trip.map((data, index) => (
         <div className="detail-card" key={index}>
-          <img className="main-image" src={data.photos[0]} />
+          <ModalImage
+            small={data.photos[0]}
+            large={data.photos[0]}
+            alt="Secondary 1"
+            className="main-image"
+          />
+          {/* <img className="main-image" src={data.photos[0]} /> */}
           <div className="description-tourist-attraction">
             <h3>{data.title}</h3>
             <p>
@@ -75,17 +133,60 @@ function App() {
                 : `${data.description.substring(0, 100)}...`}
             </p>
             <a href={data.url}>อ่านต่อ</a>
-            <p className="tag-wrapper">
+            {/* <p className="tag-wrapper">
               หมวด :{" "}
               {data.tags.map((tag, tagIndex) => (
                 <button className="tag-button" key={tagIndex} onClick={() => handleTagClick(tag)}>
                   {tag}
                 </button>
               ))}
-            </p>
-            <img className="secondary-image" src={data.photos[1]} />
+            </p> */}
+            <p className="tag-wrapper">
+  หมวด :{" "}
+  {data.tags.map((tag, tagIndex) => {
+    if (tagIndex === data.tags.length - 1) {
+      return (
+        <span key={tagIndex}>
+          {"และ"}
+          <button className="tag-button" onClick={() => handleTagClick(tag)}>
+            {tag}
+          </button>
+        </span>
+      );
+    } else {
+      return (
+        <span key={tagIndex}>
+          <button className="tag-button" onClick={() => handleTagClick(tag)}>
+            {tag}
+          </button>{" "}
+        </span>
+      );
+    }
+  })}
+</p>
+
+            {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
-            <img className="secondary-image" src={data.photos[3]} />
+            <img className="secondary-image" src={data.photos[3]} />*/}
+            <div className="wrap-secondary-image">
+            <ModalImage
+            small={data.photos[1]}
+            large={data.photos[1]}
+            alt="Secondary 1"
+            className="secondary-image"
+          />
+          <ModalImage
+            small={data.photos[2]}
+            large={data.photos[2]}
+            alt="Secondary 2"
+            className="secondary-image"
+          />
+          <ModalImage
+            small={data.photos[3]}
+            large={data.photos[3]}
+            alt="Secondary 3"
+            className="secondary-image"
+          /></div>
             <button
               className="copy-button"
               onClick={() => handleCopyUrl(data.url)}
@@ -102,10 +203,11 @@ function App() {
   return (
     <div className="App">
       <h1>เที่ยวไหนดี</h1>
-      <div>
-        <p className="find-trips">ค้นหาที่เที่ยว</p>
-        <section className="wrapper-detail">
-          <div className="find-tourist-attraction">
+      <div>    
+      {/* <p className="find-trips">ค้นหาที่เที่ยว</p>     */}
+        <section className="wrapper-detail">        
+          <div className="find-tourist-attraction">   
+          <p className="find-trips">ค้นหาที่เที่ยว</p>        
             <input
               type="text"
               placeholder="หาที่เที่ยวแล้วไปกัน ..."

@@ -1,0 +1,15 @@
+@media only screen and (max-width:750px) {
+    .detail-card {
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+    }
+    .wrap-secondary-image {
+        justify-content: center;
+    }
+    .copy-button { 
+        position: absolute;              
+        right: 250px;
+        top: 230px;
+     }
+}

@@ -10,31 +10,13 @@ function App() {
   const [trip, setTrip] = useState([]);
   const [findTrip, setFindtrip] = useState("");
 
-  // const getTrips = async () => {
-  //   const result = await axios.get(
-  //     `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
-  //   );
-
-  //   console.log(result.data.data);
-  //   setTrip(result.data.data);
-  // };
   const getTrips = async () => {
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      if (!apiUrl) {
-        throw new Error("VITE_API_URL is not defined");
-      }
-      const result = await axios.get(
-        `${apiUrl}/trips?keywords=${encodeURIComponent(findTrip)}`
-      );
+    const result = await axios.get(
+      `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
+    );
 
-      // Log result for debugging
-      console.log(result.data.data);
-
-      setTrip(result.data.data);
-    } catch (error) {
-      console.error("Error fetching trips:", error);
-    }
+    console.log(result.data.data);
+    setTrip(result.data.data);
   };
 
   useEffect(() => {

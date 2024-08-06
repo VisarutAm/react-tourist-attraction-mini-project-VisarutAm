@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/trips",
+      "dest": "app.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "app.js"
     }

@@ -3,6 +3,7 @@ import "./CSS/Responsive.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ModalImage from "react-modal-image";
+
 // import image_copy_link from "./image/copy-link-svgrepo-com.png"
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
 
   const getTrips = async () => {
     const result = await axios.get(
-      `http://localhost:4001/trips?keywords=${findTrip}`
-    );
-    console.log(result.data.data);
+      `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
+  );
+   
+    // console.log(result.data.data);
     setTrip(result.data.data);
   };
 

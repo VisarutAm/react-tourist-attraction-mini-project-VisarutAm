@@ -3,8 +3,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import trips from "./db.js";
 
+
 const app = express();
-const port = 4001;
+const port = 4000;
 
 app.use(cors());
 app.use(bodyParser.json());

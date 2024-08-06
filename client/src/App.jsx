@@ -24,7 +24,7 @@ function App() {
       // Handle error (e.g., show a message to the user)
     }
   };
-
+  // ด้านล่างไม่มี try เลย error
   // const getTrips = async () => {
   //   console.log(import.meta.env.VITE_API_URL);
   //   const result = await axios.get(

@@ -11,14 +11,29 @@ function App() {
   const [findTrip, setFindtrip] = useState("");
 
   const getTrips = async () => {
-    console.log(import.meta.env.VITE_API_URL);
-    const result = await axios.get(
-      `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
-    );
+    try {
+      console.log(import.meta.env.VITE_API_URL);
+      const result = await axios.get(
+        `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
+      );
 
-    console.log(result.data.data);
-    setTrip(result.data.data);
+      console.log(result.data.data);
+      setTrip(result.data.data);
+    } catch (error) {
+      console.error("Error fetching trips:", error);
+      // Handle error (e.g., show a message to the user)
+    }
   };
+
+  // const getTrips = async () => {
+  //   console.log(import.meta.env.VITE_API_URL);
+  //   const result = await axios.get(
+  //     `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
+  //   );
+
+  //   console.log(result.data.data);
+  //   setTrip(result.data.data);
+  // };
 
   // const getTrips = async () => {
   //   if (!findTrip) return; // Prevent empty keyword requests

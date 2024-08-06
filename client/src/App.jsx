@@ -13,15 +13,15 @@ function App() {
   const getTrips = async () => {
     const result = await axios.get(
       `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
-  );
-   
-    // console.log(result.data.data);
+    );
+
+    console.log(result.data.data);
     setTrip(result.data.data);
   };
 
   useEffect(() => {
     getTrips();
-  },[findTrip]);
+  }, [findTrip]);
 
   const handleTagClick = (tag) => {
     const newFindTrip = findTrip ? `${findTrip} ${tag}` : tag;
@@ -61,58 +61,66 @@ function App() {
               ))}
             </p> */}
             <p className="tag-wrapper">
-  หมวด :{" "}
-  {data.tags.map((tag, tagIndex) => {
-    if (tagIndex === data.tags.length - 1) {
-      return (
-        <span key={tagIndex}>
-          {"และ"}
-          <button className="tag-button" onClick={() => handleTagClick(tag)}>
-            {tag}
-          </button>
-        </span>
-      );
-    } else {
-      return (
-        <span key={tagIndex}>
-          <button className="tag-button" onClick={() => handleTagClick(tag)}>
-            {tag}
-          </button>{" "}
-        </span>
-      );
-    }
-  })}
-</p>
+              หมวด :{" "}
+              {data.tags.map((tag, tagIndex) => {
+                if (tagIndex === data.tags.length - 1) {
+                  return (
+                    <span key={tagIndex}>
+                      {"และ"}
+                      <button
+                        className="tag-button"
+                        onClick={() => handleTagClick(tag)}
+                      >
+                        {tag}
+                      </button>
+                    </span>
+                  );
+                } else {
+                  return (
+                    <span key={tagIndex}>
+                      <button
+                        className="tag-button"
+                        onClick={() => handleTagClick(tag)}
+                      >
+                        {tag}
+                      </button>{" "}
+                    </span>
+                  );
+                }
+              })}
+            </p>
 
             {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
             <img className="secondary-image" src={data.photos[3]} />*/}
             <div className="container-secondary-image">
-            <div className="wrapper-secondary-image">
-            <ModalImage
-            small={data.photos[1]}
-            large={data.photos[1]}
-            alt="Secondary 1"
-            className="secondary-image"
-          />
-          <ModalImage
-            small={data.photos[2]}
-            large={data.photos[2]}
-            alt="Secondary 2"
-            className="secondary-image"
-          />
-          <ModalImage
-            small={data.photos[3]}
-            large={data.photos[3]}
-            alt="Secondary 3"
-            className="secondary-image"
-          /></div>
-            <button
-              className="copy-button"
-              onClick={() => handleCopyUrl(data.url)}
-            >
-              🔗<span>copy link</span>
-            </button></div>
+              <div className="wrapper-secondary-image">
+                <ModalImage
+                  small={data.photos[1]}
+                  large={data.photos[1]}
+                  alt="Secondary 1"
+                  className="secondary-image"
+                />
+                <ModalImage
+                  small={data.photos[2]}
+                  large={data.photos[2]}
+                  alt="Secondary 2"
+                  className="secondary-image"
+                />
+                <ModalImage
+                  small={data.photos[3]}
+                  large={data.photos[3]}
+                  alt="Secondary 3"
+                  className="secondary-image"
+                />
+              </div>
+              <button
+                className="copy-button"
+                onClick={() => handleCopyUrl(data.url)}
+              >
+                🔗<span>copy link</span>
+              </button>
+            </div>
             {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>
@@ -144,58 +152,66 @@ function App() {
               ))}
             </p> */}
             <p className="tag-wrapper">
-  หมวด :{" "}
-  {data.tags.map((tag, tagIndex) => {
-    if (tagIndex === data.tags.length - 1) {
-      return (
-        <span key={tagIndex}>
-          {"และ"}
-          <button className="tag-button" onClick={() => handleTagClick(tag)}>
-            {tag}
-          </button>
-        </span>
-      );
-    } else {
-      return (
-        <span key={tagIndex}>
-          <button className="tag-button" onClick={() => handleTagClick(tag)}>
-            {tag}
-          </button>{" "}
-        </span>
-      );
-    }
-  })}
-</p>
+              หมวด :{" "}
+              {data.tags.map((tag, tagIndex) => {
+                if (tagIndex === data.tags.length - 1) {
+                  return (
+                    <span key={tagIndex}>
+                      {"และ"}
+                      <button
+                        className="tag-button"
+                        onClick={() => handleTagClick(tag)}
+                      >
+                        {tag}
+                      </button>
+                    </span>
+                  );
+                } else {
+                  return (
+                    <span key={tagIndex}>
+                      <button
+                        className="tag-button"
+                        onClick={() => handleTagClick(tag)}
+                      >
+                        {tag}
+                      </button>{" "}
+                    </span>
+                  );
+                }
+              })}
+            </p>
 
             {/*<img className="secondary-image" src={data.photos[1]} />
             <img className="secondary-image" src={data.photos[2]} />
             <img className="secondary-image" src={data.photos[3]} />*/}
-          <div className="container-secondary-image">
-           <div className="wrapper-secondary-image">
-            <ModalImage
-            small={data.photos[1]}
-            large={data.photos[1]}
-            alt="Secondary 1"
-            className="secondary-image"
-          />
-          <ModalImage
-            small={data.photos[2]}
-            large={data.photos[2]}
-            alt="Secondary 2"
-            className="secondary-image"
-          />
-          <ModalImage
-            small={data.photos[3]}
-            large={data.photos[3]}
-            alt="Secondary 3"
-            className="secondary-image"
-          /></div>
-            <button
-              className="copy-button"
-              onClick={() => handleCopyUrl(data.url)}
-            >
-              🔗 <span>copy link</span>
-            </button></div>
+            <div className="container-secondary-image">
+              <div className="wrapper-secondary-image">
+                <ModalImage
+                  small={data.photos[1]}
+                  large={data.photos[1]}
+                  alt="Secondary 1"
+                  className="secondary-image"
+                />
+                <ModalImage
+                  small={data.photos[2]}
+                  large={data.photos[2]}
+                  alt="Secondary 2"
+                  className="secondary-image"
+                />
+                <ModalImage
+                  small={data.photos[3]}
+                  large={data.photos[3]}
+                  alt="Secondary 3"
+                  className="secondary-image"
+                />
+              </div>
+              <button
+                className="copy-button"
+                onClick={() => handleCopyUrl(data.url)}
+              >
+                🔗 <span>copy link</span>
+              </button>
+            </div>
             {/* <button className="copy-button"><img src={image_copy_link} alt="Copy link"></img></button> */}
           </div>
         </div>
@@ -206,11 +222,11 @@ function App() {
   return (
     <div className="App">
       <h1>เที่ยวไหนดี</h1>
-      <div>    
-      {/* <p className="find-trips">ค้นหาที่เที่ยว</p>     */}
-        <section className="wrapper-detail">        
-          <div className="find-tourist-attraction">   
-          <p className="find-trips">ค้นหาที่เที่ยว</p>        
+      <div>
+        {/* <p className="find-trips">ค้นหาที่เที่ยว</p>     */}
+        <section className="wrapper-detail">
+          <div className="find-tourist-attraction">
+            <p className="find-trips">ค้นหาที่เที่ยว</p>
             <input
               type="text"
               placeholder="หาที่เที่ยวแล้วไปกัน ..."

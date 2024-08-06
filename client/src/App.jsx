@@ -11,7 +11,7 @@ function App() {
   const [findTrip, setFindtrip] = useState("");
 
   const getTrips = async () => {
-    console.log(result);
+    console.log(import.meta.env.VITE_API_URL);
     const result = await axios.get(
       `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
     );

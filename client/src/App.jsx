@@ -12,15 +12,15 @@ function App() {
 
   const getTrips = async () => {
     try {
-      console.log(import.meta.env.VITE_API_URL);
+      // console.log(import.meta.env.VITE_API_URL);
       const result = await axios.get(
         `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
       );
 
-      console.log(result.data.data);
+      // console.log(result.data.data);
       setTrip(result.data.data);
     } catch (error) {
-      console.error("Error fetching trips:", error);
+      // console.error("Error fetching trips:", error);
       // Handle error (e.g., show a message to the user)
     }
   };

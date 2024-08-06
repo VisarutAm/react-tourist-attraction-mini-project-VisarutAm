@@ -10,33 +10,34 @@ function App() {
   const [trip, setTrip] = useState([]);
   const [findTrip, setFindtrip] = useState("");
 
-  // const getTrips = async () => {
-  //   const result = await axios.get(
-  //     `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
-  //   );
-
-  //   console.log(result.data.data);
-  //   setTrip(result.data.data);
-  // };
-
   const getTrips = async () => {
-    if (!findTrip) return; // Prevent empty keyword requests
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL; // Make sure this is set correctly
-      const fullUrl = `${apiUrl}/trips?keywords=${encodeURIComponent(
-        findTrip
-      )}`;
+    console.log(result);
+    const result = await axios.get(
+      `${import.meta.env.VITE_API_URL}/trips?keywords=${findTrip}`
+    );
 
-      // Log the API URL to see if it's correct
-      console.log("API URL:", fullUrl);
-
-      const result = await axios.get(fullUrl);
-      console.log(result.data.data);
-      setTrip(result.data.data);
-    } catch (error) {
-      console.error("Error fetching trips:", error);
-    }
+    console.log(result.data.data);
+    setTrip(result.data.data);
   };
+
+  // const getTrips = async () => {
+  //   if (!findTrip) return; // Prevent empty keyword requests
+  //   try {
+  //     const apiUrl = import.meta.env.VITE_API_URL; // Make sure this is set correctly
+  //     const fullUrl = `${apiUrl}/trips?keywords=${encodeURIComponent(
+  //       findTrip
+  //     )}`;
+
+  //     // Log the API URL to see if it's correct
+  //     console.log("API URL:", fullUrl);
+
+  //     const result = await axios.get(fullUrl);
+  //     console.log(result.data.data);
+  //     setTrip(result.data.data);
+  //   } catch (error) {
+  //     console.error("Error fetching trips:", error);
+  //   }
+  // };
 
   useEffect(() => {
     getTrips();

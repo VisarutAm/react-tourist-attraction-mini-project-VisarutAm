@@ -13,7 +13,7 @@ function App() {
   const getTrips = async () => {
     console.log(import.meta.env.VITE_API_URL);
     const result = await axios.get(
-      `https://react-tourist-attraction-mini-project-visarut-am-tbzp.vercel.app//trips?keywords=${findTrip}`
+      `https://react-tourist-attraction-mini-project-visarut-am-tbzp.vercel.app/trips?keywords=${findTrip}`
     );
 
     console.log(result.data.data);

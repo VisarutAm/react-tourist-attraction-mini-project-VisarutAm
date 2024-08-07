@@ -75,7 +75,7 @@ function App() {
           <ModalImage
             small={data.photos[0]}
             large={data.photos[0]}
-            alt="Secondary 1"
+            alt="Main-image"
             className="main-image"
           />
           {/* <img className="main-image" src={data.photos[0]} /> */}
@@ -166,7 +166,7 @@ function App() {
           <ModalImage
             small={data.photos[0]}
             large={data.photos[0]}
-            alt="Secondary 1"
+            alt="Main-image"
             className="main-image"
           />
           {/* <img className="main-image" src={data.photos[0]} /> */}

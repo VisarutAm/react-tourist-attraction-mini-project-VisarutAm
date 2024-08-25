@@ -16,6 +16,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 70px;
+  font-weight: bolder;
 }
 
 .find-tourist-attraction {
@@ -58,6 +59,13 @@ hr {
   margin: 30px;
 }
 
+.main-image:hover {  
+  border-radius: 30px;
+  margin: 30px;
+  padding: 10px;
+  box-shadow:  0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
 .container-secondary-image {  
   display: flex;
   flex-direction: row;  
@@ -82,8 +90,9 @@ hr {
 .description-tourist-attraction {  
   margin-top: 30px;
   h3 {
-    margin: 5px;
+    margin: 5px 5px 5px 0px;
     font-size: 20px;
+    font-weight:bolder;
   }
   p {
     font-size: 16px;

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import ModalImage from "react-modal-image";
 import { TripsContext } from "../../context/TripsContext";
+import { Toaster, toast } from "sonner";
 
 function Display() {
   const { trips, setSearchTerm } = useContext(TripsContext);
@@ -16,10 +17,12 @@ function Display() {
 
   const handleCopyUrl = (url) => {
     navigator.clipboard.writeText(url);
-    alert(`Copy Link !! : ${url}`);
+    toast.success(`Copy Link !! : ${url}`,{duration:2500});
   };
 
   return (
+    <>
+    <Toaster position="top-center" richColors />
     <section className="wrapper-detail">
       {trips.map((trip, index) => (
         <div className="detail-card" key={index}>
@@ -89,6 +92,7 @@ function Display() {
         </div>
       ))}
     </section>
+    </>
   );
 }
 
